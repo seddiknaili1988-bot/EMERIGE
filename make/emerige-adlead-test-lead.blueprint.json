@@ -24,7 +24,7 @@
         "gzip": true,
         "useMtls": false,
         "followAllRedirects": false,
-        "data": "{\n  \"lastname\": \"TEST MOVEMYDAY\",\n  \"firstname\": \"Test\",\n  \"email\": \"test+emerige@movemyday.fr\",\n  \"phone\": \"+33600000000\",\n  \"optin\": true,\n  \"project\": \"EMERIGE PUTEAUX\",\n  \"budget\": \"\",\n  \"source\": \"MoveMyDay - TEST\",\n  \"comment\": \"LEAD DE TEST - NE PAS TRAITER\"\n}"
+        "data": "{\n  \"lastname\": \"TEST MOVEMYDAY\",\n  \"firstname\": \"Test\",\n  \"email\": \"test+emerige@movemyday.fr\",\n  \"phone\": \"+33600000000\",\n  \"optin\": true,\n  \"project\": 716,\n  \"budget\": \"\",\n  \"source\": \"MoveMyDay - TEST\",\n  \"comment\": \"LEAD DE TEST - NE PAS TRAITER - Programme PUTEAUX. En Vue\"\n}"
       },
       "metadata": { "designer": { "x": 0, "y": 0 } }
     }
