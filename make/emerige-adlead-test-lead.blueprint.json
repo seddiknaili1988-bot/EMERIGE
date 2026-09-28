@@ -1,0 +1,41 @@
+{
+  "name": "EMERIGE PUTEAUX - TEST remontée lead Adlead (HTTP)",
+  "flow": [
+    {
+      "id": 1,
+      "module": "http:ActionSendData",
+      "version": 3,
+      "parameters": { "handleErrors": false, "useNewZLibDeCompress": true },
+      "mapper": {
+        "url": "A_REMPLIR_URL_ENDPOINT_ADLEAD",
+        "method": "post",
+        "headers": [
+          { "name": "Authorization", "value": "Bearer A_REMPLIR_TOKEN_ADLEAD" },
+          { "name": "Accept", "value": "application/json" }
+        ],
+        "qs": [],
+        "bodyType": "raw",
+        "contentType": "application/json",
+        "parseResponse": true,
+        "shareCookies": false,
+        "rejectUnauthorized": true,
+        "followRedirect": true,
+        "useQuerystring": false,
+        "gzip": true,
+        "useMtls": false,
+        "followAllRedirects": false,
+        "data": "{\n  \"lastname\": \"TEST MOVEMYDAY\",\n  \"firstname\": \"Test\",\n  \"email\": \"test+emerige@movemyday.fr\",\n  \"phone\": \"+33600000000\",\n  \"optin\": true,\n  \"project\": \"EMERIGE PUTEAUX\",\n  \"budget\": \"\",\n  \"source\": \"MoveMyDay - TEST\",\n  \"comment\": \"LEAD DE TEST - NE PAS TRAITER\"\n}"
+      },
+      "metadata": { "designer": { "x": 0, "y": 0 } }
+    }
+  ],
+  "metadata": {
+    "version": 1,
+    "scenario": {
+      "roundtrips": 1, "maxErrors": 3, "autoCommit": true, "autoCommitTriggerLast": true,
+      "sequential": false, "confidential": false, "dataloss": false, "dlq": false, "freshVariables": false
+    },
+    "designer": { "orphans": [] },
+    "zone": "eu2.make.com"
+  }
+}
