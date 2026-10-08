@@ -52,3 +52,19 @@ Demander à Ivan les valeurs exactes de medium et de campaign attendues dans Adl
 1. Envoyer un lead test Meta (outil de test Lead Ads) et un lead test landing.
 2. Vérifier : un seul lead par soumission, canal `lead-ads` ou `landing`, et source, medium et campaign conformes.
 3. Faire supprimer les 2 tests et les 2 doublons du lead n°1 par Emerige.
+
+## 5. Incident du 08/10/2026 : « Enter valid JSON in the request body »
+
+Exécution `c200a67bf65e4235b58a6f9e68744348` (scénario 9903104), erreur du module HTTP :
+`Bad control character in string literal in JSON at position 414 (line 19 column 37)`.
+
+Cause : le corps était saisi en mode **JSON string**, et les valeurs du formulaire y étaient collées telles quelles. La ligne 19 correspond à `"message": "{{3.data.avez-vous_une_attente_particulière_?}}"`. Le prospect a tapé un retour à la ligne dans sa réponse libre, ce qui rend le JSON invalide. Un guillemet `"` ou un antislash `\` dans n'importe quel champ (nom, message…) aurait produit la même erreur. Make a ensuite désactivé le scénario.
+
+Correction appliquée dans Make :
+- Module HTTP (id 35) : **Body input method = Data structure**, avec la structure « Adlead - corps lead Emerige (POST /leads) » (id 639404). Make échappe désormais lui-même les caractères réservés du JSON.
+- Mapping inchangé : `tracking_origin` = `{"key":"lead-ads","name":"Lead Ads"}`, `tracking_source` = `facebook`, `tracking_medium` = `form`, `tracking_campaign` = `{{3.campaignName}}`.
+- `property_rooms` reçoit désormais le tableau Meta tel quel (une entrée par typologie cochée), au lieu d'une seule chaîne qui les concaténait.
+- Les modules orphelins de l'ancienne version (router 19 et ses modules) ont été retirés du canevas. Le blueprint d'avant correctif est conservé dans `REMONTEE_DES_LEADS_META_ADS_TEASING_OCT-2026_AVANT-CORRECTIF-JSON.blueprint.json`.
+- Scénario réactivé, et le lead en échec rejoué.
+
+Règle à retenir : dans un module HTTP Make, ne jamais injecter un champ saisi par un utilisateur dans un corps en « JSON string ». Utiliser une Data structure, ou à défaut le module JSON > Create JSON.
