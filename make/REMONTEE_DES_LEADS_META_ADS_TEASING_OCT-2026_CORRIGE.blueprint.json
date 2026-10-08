@@ -9,7 +9,178 @@
                 "designer": {
                     "x": 0,
                     "y": 150
-                }
+                },
+                "restore": {
+                    "parameters": {
+                        "__IMTHOOK__": {
+                            "data": {
+                                "editable": "false"
+                            },
+                            "label": "emerige"
+                        }
+                    }
+                },
+                "interface": [
+                    {
+                        "name": "leadgenId",
+                        "type": "text",
+                        "label": "Lead ID"
+                    },
+                    {
+                        "name": "formId",
+                        "type": "text",
+                        "label": "Form ID"
+                    },
+                    {
+                        "name": "dateCreated",
+                        "type": "date",
+                        "label": "Date created"
+                    },
+                    {
+                        "name": "adId",
+                        "type": "text",
+                        "label": "Ad ID"
+                    },
+                    {
+                        "name": "pageId",
+                        "type": "text",
+                        "label": "Page ID"
+                    },
+                    {
+                        "name": "adgroupId",
+                        "type": "text",
+                        "label": "Ad group ID"
+                    },
+                    {
+                        "name": "mappable_field_data",
+                        "spec": [
+                            {
+                                "name": "name",
+                                "type": "text",
+                                "label": "Name"
+                            },
+                            {
+                                "name": "value",
+                                "type": "text",
+                                "label": "Value"
+                            }
+                        ],
+                        "type": "array",
+                        "label": "Mappable field data"
+                    },
+                    {
+                        "name": "data",
+                        "spec": [
+                            {
+                                "name": "quel_est_votre_projet_?",
+                                "type": "array",
+                                "label": "Quel est votre projet ?"
+                            },
+                            {
+                                "name": "quel_type_d'appartement_vous_intéresse_?",
+                                "type": "array",
+                                "label": "Quel type d'appartement vous intéresse ?"
+                            },
+                            {
+                                "name": "où_en_êtes-vous_dans_votre_démarche_?",
+                                "type": "array",
+                                "label": "Où en êtes-vous dans votre démarche ?"
+                            },
+                            {
+                                "name": "quel_est_votre_délai_pour_concrétiser_votre_projet_?",
+                                "type": "array",
+                                "label": "Quel est votre délai pour concrétiser votre projet ?"
+                            },
+                            {
+                                "name": "avez-vous_une_attente_particulière_?",
+                                "type": "text",
+                                "label": "Avez-vous une attente particulière ?"
+                            },
+                            {
+                                "name": "numéro_de_téléphone",
+                                "type": "text",
+                                "label": "Phone number"
+                            },
+                            {
+                                "name": "prénom",
+                                "type": "text",
+                                "label": "First name"
+                            },
+                            {
+                                "name": "nom_de_famille",
+                                "type": "text",
+                                "label": "Last name"
+                            },
+                            {
+                                "name": "e-mail",
+                                "type": "text",
+                                "label": "Email"
+                            }
+                        ],
+                        "type": "collection",
+                        "label": "Field data"
+                    },
+                    {
+                        "name": "isOrganic",
+                        "type": "boolean",
+                        "label": "Is organic"
+                    },
+                    {
+                        "name": "adName",
+                        "type": "text",
+                        "label": "Ad name"
+                    },
+                    {
+                        "name": "adsetId",
+                        "type": "text",
+                        "label": "Ad set ID"
+                    },
+                    {
+                        "name": "adsetName",
+                        "type": "text",
+                        "label": "Adset name"
+                    },
+                    {
+                        "name": "campaignId",
+                        "type": "text",
+                        "label": "Campaign ID"
+                    },
+                    {
+                        "name": "campaignName",
+                        "type": "text",
+                        "label": "Campaign name"
+                    },
+                    {
+                        "name": "customDisclaimerResponses",
+                        "type": "collection",
+                        "label": "Custom disclaimer responses"
+                    },
+                    {
+                        "name": "homeListing",
+                        "type": "collection",
+                        "label": "Home listing"
+                    },
+                    {
+                        "name": "partnerName",
+                        "type": "text",
+                        "label": "Partner name"
+                    },
+                    {
+                        "name": "platform",
+                        "type": "text",
+                        "label": "Platform"
+                    },
+                    {
+                        "name": "retailerItemId",
+                        "type": "text",
+                        "label": "Retailer item ID"
+                    },
+                    {
+                        "name": "vehicle",
+                        "type": "collection",
+                        "label": "Vehicle"
+                    }
+                ]
             },
             "parameters": {
                 "v": "2",
@@ -149,9 +320,7 @@
                                 "base": "appEpR7vva4Vsimvp",
                                 "table": "tblySHfHcHT5yonmC",
                                 "record": {
-                                    "fld2jxOsVfBq8nnc2": {},
                                     "fld5dNeSmDWDsSMNm": "Meta Ads",
-                                    "fld9i8zEq37Tc5DOy": {},
                                     "fldAqMXGi29bjpPle": "{{3.data.`numéro_de_téléphone`}}",
                                     "fldNC7rv0w8ZhM8Ug": "{{3.adsetName}}",
                                     "fldNWgdEdJZdHNjBG": "{{3.data.`e-mail`}}",
@@ -174,6 +343,511 @@
                                 "designer": {
                                     "x": 900,
                                     "y": 300
+                                },
+                                "expect": [
+                                    {
+                                        "name": "base",
+                                        "type": "select",
+                                        "label": "Base",
+                                        "required": true
+                                    },
+                                    {
+                                        "name": "typecast",
+                                        "type": "boolean",
+                                        "label": "Smart links",
+                                        "required": true
+                                    },
+                                    {
+                                        "name": "useColumnId",
+                                        "type": "boolean",
+                                        "label": "Use Column ID",
+                                        "required": true
+                                    },
+                                    {
+                                        "name": "table",
+                                        "type": "select",
+                                        "label": "Table",
+                                        "required": true
+                                    },
+                                    {
+                                        "name": "record",
+                                        "spec": [
+                                            {
+                                                "name": "fldtodncc7EdU3qXG",
+                                                "type": "text",
+                                                "label": "Prénom"
+                                            },
+                                            {
+                                                "name": "fldRM8lpLY4fdMF6z",
+                                                "type": "text",
+                                                "label": "Nom"
+                                            },
+                                            {
+                                                "name": "fldNWgdEdJZdHNjBG",
+                                                "type": "text",
+                                                "label": "Email"
+                                            },
+                                            {
+                                                "name": "fldAqMXGi29bjpPle",
+                                                "type": "text",
+                                                "label": "Téléphone"
+                                            },
+                                            {
+                                                "name": "fldNC7rv0w8ZhM8Ug",
+                                                "type": "text",
+                                                "label": "Campagne Meta"
+                                            },
+                                            {
+                                                "name": "fldTjWF2RnM9dlSrh",
+                                                "type": "text",
+                                                "label": "ID Lead Meta"
+                                            },
+                                            {
+                                                "mode": "edit",
+                                                "name": "fldh8pED3Fc9OS7as",
+                                                "type": "select",
+                                                "label": "Q1 – Projet"
+                                            },
+                                            {
+                                                "mode": "edit",
+                                                "name": "fldpUizFK89Ksnro5",
+                                                "type": "select",
+                                                "label": "Q2 – Typologie"
+                                            },
+                                            {
+                                                "mode": "edit",
+                                                "name": "flds3rYM00xMOoAPj",
+                                                "type": "select",
+                                                "label": "Q3 – Maturité"
+                                            },
+                                            {
+                                                "mode": "edit",
+                                                "name": "fldRe1JyOgkUX4lXO",
+                                                "type": "select",
+                                                "label": "Q4 – Délai"
+                                            },
+                                            {
+                                                "name": "fldSRtbc7D7jqtWnX",
+                                                "type": "text",
+                                                "label": "Q5 – Attente particulière"
+                                            },
+                                            {
+                                                "name": "fldOzyGjVFox4ypl6",
+                                                "type": "text",
+                                                "label": "Historique des interactions"
+                                            },
+                                            {
+                                                "mode": "edit",
+                                                "name": "fld5dNeSmDWDsSMNm",
+                                                "type": "select",
+                                                "label": "Origine lead"
+                                            },
+                                            {
+                                                "name": "fld2jxOsVfBq8nnc2",
+                                                "spec": [
+                                                    {
+                                                        "name": "id",
+                                                        "type": "text",
+                                                        "label": "ID"
+                                                    },
+                                                    {
+                                                        "name": "email",
+                                                        "type": "email",
+                                                        "label": "Email"
+                                                    }
+                                                ],
+                                                "type": "collection",
+                                                "label": "Responsable (assigné)"
+                                            },
+                                            {
+                                                "mode": "edit",
+                                                "name": "fldi6oxD7hzLYBtUu",
+                                                "type": "select",
+                                                "label": "Statut CRM"
+                                            },
+                                            {
+                                                "name": "fld0FpDpJYMmvZ9wv",
+                                                "type": "text",
+                                                "label": "Notes commerciales"
+                                            },
+                                            {
+                                                "name": "fldFPCVohs5MrqQGp",
+                                                "time": false,
+                                                "type": "date",
+                                                "label": "Date de prise en charge"
+                                            },
+                                            {
+                                                "name": "fld9i8zEq37Tc5DOy",
+                                                "spec": [
+                                                    {
+                                                        "name": "id",
+                                                        "type": "text",
+                                                        "label": "ID"
+                                                    },
+                                                    {
+                                                        "name": "email",
+                                                        "type": "email",
+                                                        "label": "Email"
+                                                    }
+                                                ],
+                                                "type": "collection",
+                                                "label": "Assigné à"
+                                            },
+                                            {
+                                                "name": "fld4ChIZOgoGb5tKD",
+                                                "type": "boolean",
+                                                "label": "PREMIER LEAD"
+                                            }
+                                        ],
+                                        "type": "collection",
+                                        "label": "Record"
+                                    }
+                                ],
+                                "restore": {
+                                    "expect": {
+                                        "base": {
+                                            "label": "EMERIGIE-PUTEUX"
+                                        },
+                                        "table": {
+                                            "label": "Leads",
+                                            "nested": [
+                                                {
+                                                    "name": "record",
+                                                    "spec": [
+                                                        {
+                                                            "name": "fldtodncc7EdU3qXG",
+                                                            "type": "text",
+                                                            "label": "Prénom"
+                                                        },
+                                                        {
+                                                            "name": "fldRM8lpLY4fdMF6z",
+                                                            "type": "text",
+                                                            "label": "Nom"
+                                                        },
+                                                        {
+                                                            "name": "fldNWgdEdJZdHNjBG",
+                                                            "type": "text",
+                                                            "label": "Email"
+                                                        },
+                                                        {
+                                                            "name": "fldAqMXGi29bjpPle",
+                                                            "type": "text",
+                                                            "label": "Téléphone"
+                                                        },
+                                                        {
+                                                            "name": "fldNC7rv0w8ZhM8Ug",
+                                                            "type": "text",
+                                                            "label": "Campagne Meta"
+                                                        },
+                                                        {
+                                                            "name": "fldTjWF2RnM9dlSrh",
+                                                            "type": "text",
+                                                            "label": "ID Lead Meta"
+                                                        },
+                                                        {
+                                                            "mode": "edit",
+                                                            "name": "fldh8pED3Fc9OS7as",
+                                                            "type": "select",
+                                                            "label": "Q1 – Projet",
+                                                            "dynamic": true,
+                                                            "options": [
+                                                                {
+                                                                    "label": "acquérir_ma_résidence_principale",
+                                                                    "value": "acquérir_ma_résidence_principale"
+                                                                },
+                                                                {
+                                                                    "label": "investir",
+                                                                    "value": "investir"
+                                                                },
+                                                                {
+                                                                    "label": "découvrir_le_projet_pour_le_moment",
+                                                                    "value": "découvrir_le_projet_pour_le_moment"
+                                                                },
+                                                                {
+                                                                    "label": "acheter_pour_un_proche_(enfant,_parent)",
+                                                                    "value": "acheter_pour_un_proche_(enfant,_parent)"
+                                                                }
+                                                            ],
+                                                            "validate": false
+                                                        },
+                                                        {
+                                                            "mode": "edit",
+                                                            "name": "fldpUizFK89Ksnro5",
+                                                            "type": "select",
+                                                            "label": "Q2 – Typologie",
+                                                            "dynamic": true,
+                                                            "options": [
+                                                                {
+                                                                    "label": "studio",
+                                                                    "value": "studio"
+                                                                },
+                                                                {
+                                                                    "label": "2_pièces",
+                                                                    "value": "2_pièces"
+                                                                },
+                                                                {
+                                                                    "label": "3_pièces",
+                                                                    "value": "3_pièces"
+                                                                },
+                                                                {
+                                                                    "label": "4_pièces",
+                                                                    "value": "4_pièces"
+                                                                },
+                                                                {
+                                                                    "label": "5_pièces",
+                                                                    "value": "5_pièces"
+                                                                },
+                                                                {
+                                                                    "label": "je_souhaite_découvrir_l'ensemble_des_plans",
+                                                                    "value": "je_souhaite_découvrir_l'ensemble_des_plans"
+                                                                }
+                                                            ],
+                                                            "validate": false
+                                                        },
+                                                        {
+                                                            "mode": "edit",
+                                                            "name": "flds3rYM00xMOoAPj",
+                                                            "type": "select",
+                                                            "label": "Q3 – Maturité",
+                                                            "dynamic": true,
+                                                            "options": [
+                                                                {
+                                                                    "label": "je_cherche_activement",
+                                                                    "value": "je_cherche_activement"
+                                                                },
+                                                                {
+                                                                    "label": "j’hésite_entre_plusieurs_projets",
+                                                                    "value": "j’hésite_entre_plusieurs_projets"
+                                                                },
+                                                                {
+                                                                    "label": "je_débute_mes_recherches",
+                                                                    "value": "je_débute_mes_recherches"
+                                                                },
+                                                                {
+                                                                    "label": "je_souhaite_recevoir_les_plans_et_les_prix_en_priorité",
+                                                                    "value": "je_souhaite_recevoir_les_plans_et_les_prix_en_priorité"
+                                                                },
+                                                                {
+                                                                    "label": "j'hésite_entre_plusieurs_projets",
+                                                                    "value": "j'hésite_entre_plusieurs_projets"
+                                                                }
+                                                            ],
+                                                            "validate": false
+                                                        },
+                                                        {
+                                                            "mode": "edit",
+                                                            "name": "fldRe1JyOgkUX4lXO",
+                                                            "type": "select",
+                                                            "label": "Q4 – Délai",
+                                                            "dynamic": true,
+                                                            "options": [
+                                                                {
+                                                                    "label": "dans_les_6_prochains_mois",
+                                                                    "value": "dans_les_6_prochains_mois"
+                                                                },
+                                                                {
+                                                                    "label": "dans_6_à_12_mois",
+                                                                    "value": "dans_6_à_12_mois"
+                                                                },
+                                                                {
+                                                                    "label": "dans_plus_de_12_mois",
+                                                                    "value": "dans_plus_de_12_mois"
+                                                                },
+                                                                {
+                                                                    "label": "je_m'informe_pour_le_moment",
+                                                                    "value": "je_m'informe_pour_le_moment"
+                                                                },
+                                                                {
+                                                                    "label": "je_m'informe_pour_le_moment",
+                                                                    "value": "je_m'informe_pour_le_moment"
+                                                                }
+                                                            ],
+                                                            "validate": false
+                                                        },
+                                                        {
+                                                            "name": "fldSRtbc7D7jqtWnX",
+                                                            "type": "text",
+                                                            "label": "Q5 – Attente particulière",
+                                                            "multiline": true
+                                                        },
+                                                        {
+                                                            "name": "fldOzyGjVFox4ypl6",
+                                                            "type": "text",
+                                                            "label": "Historique des interactions",
+                                                            "multiline": true
+                                                        },
+                                                        {
+                                                            "mode": "edit",
+                                                            "name": "fld5dNeSmDWDsSMNm",
+                                                            "type": "select",
+                                                            "label": "Origine lead",
+                                                            "dynamic": true,
+                                                            "options": [
+                                                                {
+                                                                    "label": "Meta Ads",
+                                                                    "value": "Meta Ads"
+                                                                },
+                                                                {
+                                                                    "label": "Ajout manuel",
+                                                                    "value": "Ajout manuel"
+                                                                },
+                                                                {
+                                                                    "label": "Import CSV",
+                                                                    "value": "Import CSV"
+                                                                },
+                                                                {
+                                                                    "label": "Autre",
+                                                                    "value": "Autre"
+                                                                },
+                                                                {
+                                                                    "label": "Facebook Ads",
+                                                                    "value": "Facebook Ads"
+                                                                },
+                                                                {
+                                                                    "label": "Instagram Ads",
+                                                                    "value": "Instagram Ads"
+                                                                }
+                                                            ],
+                                                            "validate": false
+                                                        },
+                                                        {
+                                                            "name": "fld2jxOsVfBq8nnc2",
+                                                            "spec": [
+                                                                {
+                                                                    "help": "Unique user id",
+                                                                    "name": "id",
+                                                                    "type": "text",
+                                                                    "label": "ID"
+                                                                },
+                                                                {
+                                                                    "help": "User's email address",
+                                                                    "name": "email",
+                                                                    "type": "email",
+                                                                    "label": "Email"
+                                                                }
+                                                            ],
+                                                            "type": "collection",
+                                                            "label": "Responsable (assigné)"
+                                                        },
+                                                        {
+                                                            "mode": "edit",
+                                                            "name": "fldi6oxD7hzLYBtUu",
+                                                            "type": "select",
+                                                            "label": "Statut CRM",
+                                                            "dynamic": true,
+                                                            "options": [
+                                                                {
+                                                                    "label": "Nouveau",
+                                                                    "value": "Nouveau"
+                                                                },
+                                                                {
+                                                                    "label": "À contacter",
+                                                                    "value": "À contacter"
+                                                                },
+                                                                {
+                                                                    "label": "En cours",
+                                                                    "value": "En cours"
+                                                                },
+                                                                {
+                                                                    "label": "Qualifié",
+                                                                    "value": "Qualifié"
+                                                                },
+                                                                {
+                                                                    "label": "Signé",
+                                                                    "value": "Signé"
+                                                                },
+                                                                {
+                                                                    "label": "Perdu",
+                                                                    "value": "Perdu"
+                                                                }
+                                                            ],
+                                                            "validate": false
+                                                        },
+                                                        {
+                                                            "name": "fld0FpDpJYMmvZ9wv",
+                                                            "type": "text",
+                                                            "label": "Notes commerciales",
+                                                            "multiline": true
+                                                        },
+                                                        {
+                                                            "name": "fldFPCVohs5MrqQGp",
+                                                            "time": false,
+                                                            "type": "date",
+                                                            "label": "Date de prise en charge"
+                                                        },
+                                                        {
+                                                            "name": "fld9i8zEq37Tc5DOy",
+                                                            "spec": [
+                                                                {
+                                                                    "help": "Unique user id",
+                                                                    "name": "id",
+                                                                    "type": "text",
+                                                                    "label": "ID"
+                                                                },
+                                                                {
+                                                                    "help": "User's email address",
+                                                                    "name": "email",
+                                                                    "type": "email",
+                                                                    "label": "Email"
+                                                                }
+                                                            ],
+                                                            "type": "collection",
+                                                            "label": "Assigné à"
+                                                        },
+                                                        {
+                                                            "name": "fld4ChIZOgoGb5tKD",
+                                                            "type": "boolean",
+                                                            "label": "PREMIER LEAD"
+                                                        }
+                                                    ],
+                                                    "type": "collection",
+                                                    "label": "Record"
+                                                }
+                                            ]
+                                        },
+                                        "record": {
+                                            "nested": {
+                                                "fld4ChIZOgoGb5tKD": {
+                                                    "mode": "chose"
+                                                },
+                                                "fld5dNeSmDWDsSMNm": {
+                                                    "mode": "chose",
+                                                    "label": "Meta Ads"
+                                                },
+                                                "fldRe1JyOgkUX4lXO": {
+                                                    "mode": "edit"
+                                                },
+                                                "fldh8pED3Fc9OS7as": {
+                                                    "mode": "edit"
+                                                },
+                                                "fldi6oxD7hzLYBtUu": {
+                                                    "mode": "chose",
+                                                    "label": "Nouveau"
+                                                },
+                                                "fldpUizFK89Ksnro5": {
+                                                    "mode": "edit"
+                                                },
+                                                "flds3rYM00xMOoAPj": {
+                                                    "mode": "edit"
+                                                }
+                                            }
+                                        },
+                                        "typecast": {
+                                            "mode": "chose"
+                                        },
+                                        "useColumnId": {
+                                            "mode": "chose"
+                                        }
+                                    },
+                                    "parameters": {
+                                        "__IMTCONN__": {
+                                            "data": {
+                                                "scoped": "true",
+                                                "connection": "airtable3"
+                                            },
+                                            "label": "HIBANA-ARGENTEUIL-FORM (User ID: usrMin0vN6rWLIHaO)"
+                                        }
+                                    }
                                 }
                             },
                             "parameters": {

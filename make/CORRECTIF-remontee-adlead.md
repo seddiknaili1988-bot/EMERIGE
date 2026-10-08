@@ -65,6 +65,9 @@ Correction appliquée dans Make :
 - Mapping inchangé : `tracking_origin` = `{"key":"lead-ads","name":"Lead Ads"}`, `tracking_source` = `facebook`, `tracking_medium` = `form`, `tracking_campaign` = `{{3.campaignName}}`.
 - `property_rooms` reçoit désormais le tableau Meta tel quel (une entrée par typologie cochée), au lieu d'une seule chaîne qui les concaténait.
 - Les modules orphelins de l'ancienne version (router 19 et ses modules) ont été retirés du canevas. Le blueprint d'avant correctif est conservé dans `REMONTEE_DES_LEADS_META_ADS_TEASING_OCT-2026_AVANT-CORRECTIF-JSON.blueprint.json`.
-- Scénario réactivé, et le lead en échec rejoué.
+- Module Airtable « Create a record » (id 29) : retrait des deux collections vides « Responsable (assigné) » et « Assigné à », qui partaient en `{}` (erreur 422 `Cannot parse value "{}"`).
+- Scénario réactivé. Le lead en échec (Rita, ID Lead Meta `28446973588256604`) est bien arrivé dans Adlead, et l'enregistrement Airtable a été créé par un replay pendant lequel le module HTTP était temporairement filtré, pour ne pas le renvoyer une nouvelle fois.
+
+⚠️ Doublon probable dans Adlead : à la réactivation de 07:08, Make a traité en même temps le webhook resté en file d'attente (exécution `13f8f412…`) et le replay manuel (`445b18d5…`). Les deux exécutions ont passé le module HTTP. Il faut demander à Emerige / Adlead de vérifier et de supprimer le doublon de ce lead du 08/10 (Rita).
 
 Règle à retenir : dans un module HTTP Make, ne jamais injecter un champ saisi par un utilisateur dans un corps en « JSON string ». Utiliser une Data structure, ou à défaut le module JSON > Create JSON.
