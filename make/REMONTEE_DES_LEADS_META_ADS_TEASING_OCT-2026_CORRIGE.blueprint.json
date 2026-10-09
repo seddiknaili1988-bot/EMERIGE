@@ -272,7 +272,6 @@
                                 "bodyDataStructure": 639404,
                                 "dataStructureBodyContent": {
                                     "contact": {
-                                        "title": "m",
                                         "name": "{{3.data.nom_de_famille}}",
                                         "firstname": "{{3.data.`prénom`}}",
                                         "email1": "{{3.data.`e-mail`}}",
@@ -287,13 +286,10 @@
                                         "project": "home",
                                         "property_rooms": "{{3.data.`quel_type_d'appartement_vous_intéresse_?`}}",
                                         "message": "{{3.data.`avez-vous_une_attente_particulière_?`}}",
-                                        "tracking_origin": {
-                                            "key": "lead-ads",
-                                            "name": "Lead Ads"
-                                        },
+                                        "tracking_origin": "lead-ads",
                                         "tracking_source": "facebook",
                                         "tracking_medium": "form",
-                                        "tracking_campaign": "{{3.campaignName}}"
+                                        "tracking_campaign": "0926-avp-all-n-puteaux2-teasing-13791"
                                     }
                                 }
                             },

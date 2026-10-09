@@ -83,3 +83,5 @@ Corrections à faire dans Make :
 2. Module HTTP : `tracking_origin` = `lead-ads` et `tracking_campaign` = `0926-avp-all-n-puteaux2-teasing-13791`.
 
 À vérifier aussi dans la doc : `contact.title` attend `mr` ou `ms` (on envoie `m`), et `property_rooms` attend des clés du type `T2` ou `T3` (Meta envoie `2_pièces`).
+
+**Appliqué le 09/10/2026 à 08:07 UTC** : structure 639404 (`tracking_origin` passe en texte, `contact.title` retiré) et module HTTP (`tracking_origin` = `lead-ads`, `tracking_campaign` = `0926-avp-all-n-puteaux2-teasing-13791`). La validation du module est OK et le scénario est actif. Les 4 leads reçus entre le 08/10 10:43 et le 09/10 05:53 UTC sont partis avec les anciennes valeurs : il faut les corriger à la main dans Adlead.
