@@ -71,3 +71,15 @@ Correction appliquée dans Make :
 ⚠️ Doublon probable dans Adlead : à la réactivation de 07:08, Make a traité en même temps le webhook resté en file d'attente (exécution `13f8f412…`) et le replay manuel (`445b18d5…`). Les deux exécutions ont passé le module HTTP. Il faut demander à Emerige / Adlead de vérifier et de supprimer le doublon de ce lead du 08/10 (Rita).
 
 Règle à retenir : dans un module HTTP Make, ne jamais injecter un champ saisi par un utilisateur dans un corps en « JSON string ». Utiliser une Data structure, ou à défaut le module JSON > Create JSON.
+
+## 6. Retour d'Ivan du 09/10/2026 : canal d'origine « Autre » et campagne fausse
+
+D'après la doc Adlead (section « Noeud lead ») :
+- `tracking_origin` est un **texte** qui contient seulement la clé : `"tracking_origin": "lead-ads"` (et `"landing"` pour la landing page). L'objet `{"key":"lead-ads","name":"Lead Ads"}` n'est pas reconnu, d'où « Autre ».
+- `tracking_campaign` doit valoir `0926-avp-all-n-puteaux2-teasing-13791` (valeur donnée par Ivan le 07/10). La campagne Meta n'a jamais été renommée, donc `{{3.campaignName}}` envoyait `PUTEAUX.EMERIGE.TEASING.1026.FORM`.
+
+Corrections à faire dans Make :
+1. Structure de données « Adlead - corps lead Emerige (POST /leads) » (id 639404) : passer `lead > tracking_origin` du type Collection au type Texte.
+2. Module HTTP : `tracking_origin` = `lead-ads` et `tracking_campaign` = `0926-avp-all-n-puteaux2-teasing-13791`.
+
+À vérifier aussi dans la doc : `contact.title` attend `mr` ou `ms` (on envoie `m`), et `property_rooms` attend des clés du type `T2` ou `T3` (Meta envoie `2_pièces`).
