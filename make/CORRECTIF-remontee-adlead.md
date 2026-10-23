@@ -85,3 +85,23 @@ Corrections à faire dans Make :
 À vérifier aussi dans la doc : `contact.title` attend `mr` ou `ms` (on envoie `m`), et `property_rooms` attend des clés du type `T2` ou `T3` (Meta envoie `2_pièces`).
 
 **Appliqué le 09/10/2026 à 08:07 UTC** : structure 639404 (`tracking_origin` passe en texte, `contact.title` retiré) et module HTTP (`tracking_origin` = `lead-ads`, `tracking_campaign` = `0926-avp-all-n-puteaux2-teasing-13791`). La validation du module est OK et le scénario est actif. Les 4 leads reçus entre le 08/10 10:43 et le 09/10 05:53 UTC sont partis avec les anciennes valeurs : il faut les corriger à la main dans Adlead.
+
+## 7. Ajout de GHL (GoHighLevel), 23/10/2026
+
+Connexion Make : 14691658, location « EMERIGE - PUTEAUX ». Module `highlevel:createAContact`, avec une directive Ignore en cas d'erreur : un doublon ou une panne GHL ne bloque jamais Adlead.
+
+**Scénario Meta (9903104)** : GHL est placé après la création Airtable, dans la branche anti-doublon.
+- Prénom, nom, e-mail et téléphone viennent du formulaire Meta. Source : « Meta Lead Ads - Teasing Puteaux ».
+- Tags : emerige-puteaux, meta-lead-ads, teasing.
+- Champs personnalisés : utm_source = facebook, utm_medium = form, utm_campaign = 0926-avp-all-n-puteaux2-teasing-13791.
+- `message` contient le résumé « Projet | Typologie | Démarche | Délai | Attente ».
+- ID_AIRTABLE et URL_AIRTABLE renvoient vers la fiche Airtable du lead.
+
+**Scénario LP (9879411)** : passage par un routeur. Le filtre « Lead complet » est en entrée. Branche 1 : Adlead. Branche 2 : GHL.
+- Prénom, nom, e-mail, téléphone, ville et code postal. Source : « Landing page - Teasing Puteaux ».
+- Tags : emerige-puteaux, landing-page, teasing, et optin-oui ou optin-non.
+- utm_source, utm_medium, utm_campaign, utm_content, utm_term et message.
+
+**Import de l'historique** (tag `import-historique`) :
+- Meta : 110 leads Airtable importés avec un scénario temporaire, supprimé ensuite.
+- LP : 12 exécutions rejouées pendant qu'Adlead était bloqué. 7 leads importés ; les 5 autres ne contenaient pas de données (appels vides ou anciens tests).
